@@ -1,0 +1,75 @@
+.Block{
+    width: 593px;
+    min-height: 261px;
+
+    margin: 10px;
+    background-color: #373C3F;
+
+
+
+    border: 1px solid #515151;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+    overflow: hidden;
+
+
+
+}
+.parent {
+    height:100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 6; }
+.div2 { grid-area: 2 / 1 / 6 / 4; display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;}
+.div3 { grid-area: 2 / 4 / 6 / 6; }
+
+.BlockText{
+    background-color: #373C3F;
+    color:#928F8F;
+    border:0px;
+
+}
+textarea{
+    height:200px;
+    width:100%;
+    resize: none;
+    font-size: 15px;
+}
+
+.parent {
+
+}
+
+.Priorities { grid-area: 1 / 1 / 6 / 2;background-color: #373C3F;
+    color:#928F8F;
+    border:0px;
+    padding-top:5px;
+}
+.Priorities input{
+    width:100%;
+    background-color: #373C3F;
+    color:#928F8F;
+    border:0px;
+    padding-left: 20px;
+    height:auto;
+    margin-top:-2px;
+}
+
+.Tasks { grid-area: 1 / 2 / 6 / 6; }
+
+ul{
+    margin-top:0px;
+    padding-left:50px;
+}

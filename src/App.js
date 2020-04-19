@@ -67,7 +67,7 @@ class App extends React.Component {
         <Capture className="Capture" listenSomething={this.listenToAdd}>
         <Input receiveTasks={this.receiveTasks} />
             <ul>
-        {            this.state.tasks.map(task => {return (<Todos title={task.title} id={task.todoId}/>)})
+                {            this.state.tasks.map(task => {return (<li><Todos title={task.title} id={task.todoId}/></li>)})
             }
                 </ul>
         </Capture>

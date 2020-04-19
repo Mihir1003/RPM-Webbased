@@ -24,7 +24,7 @@ class Input extends React.Component {
 
 
     enterPressed(e){
-        if (e.keyCode==13){
+        if (e.keyCode==13 && this.state.title){
             this.props.receiveTasks({title:this.state.title,todoId:this.id})
             this.setState({
                 title:""

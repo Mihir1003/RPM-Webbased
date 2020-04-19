@@ -1,7 +1,19 @@
 .Todo
 {
     text-align:left;
+    background-color: inherit;
+    border:0px;
+    height:auto;
+    width:auto;
 }
+.Todo input{
+    background-color: inherit;
+    border:0px;
+    height:auto;
+    width:auto;
+
+}
+
 img{
     height:10px;
     width:10px;

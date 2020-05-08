@@ -36,7 +36,7 @@ class BlockArea extends React.Component {
                 <button className={"AddButton"} onClick={this.addBlock} >+</button>
 
                 <div className={"BlocksInside"}>
-                {this.state.blocks.map((block) => {this.id+=1;return <Block listen={this.listen} id={this.id} filtered={this.props.filtered} block={block}/>})}
+                {this.state.blocks.map((block) => {this.id+=1;return <Block listen={this.listen} key={this.id} id={this.id} filtered={this.props.filtered} block={block}/>})}
                 </div>
             </div>
 

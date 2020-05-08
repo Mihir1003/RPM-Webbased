@@ -13,11 +13,12 @@ class App extends React.Component {
         super();
         this.state={
             tasks:[],
-            filtered:["1","2","3","4"]
+            filtered:[]
         };
         this.receiveTasks=this.receiveTasks.bind(this);
         this.filt=this.filt.bind(this);
         this.listenToAdd=this.listenToAdd.bind(this);
+        this.handleDelete=this.handleDelete.bind(this);
 
     }
 
@@ -55,11 +56,17 @@ class App extends React.Component {
             filtered:[...this.state.filtered.filter(task => {console.log(task.todoId,object); return task.todoId!=object.todoId})]
         })}
 
+        handleDelete(object){
+        this.setState({
+            tasks:this.state.tasks.filter(task => {console.log(task.todoId,object.id,task.id!=object);return task.todoId!=object.id}),
+            filtered:this.state.filtered.filter(task => {return task.todoId!=object.id})
+            })}
+
 
 
 
     render() {
-        console.log(this.state.tasks);
+        console.log(this.state.filtered);
     return (
 
     <div className="App container">
@@ -67,7 +74,7 @@ class App extends React.Component {
         <Capture className="Capture" listenSomething={this.listenToAdd}>
         <Input receiveTasks={this.receiveTasks} />
             <ul>
-                {            this.state.tasks.map(task => {return (<li><Todos title={task.title} id={task.todoId}/></li>)})
+                {            this.state.tasks.map(task => {return (<li><Todos onDelete={this.handleDelete} key={task.todoId} title={task.title} id={task.todoId}/></li>)})
             }
                 </ul>
         </Capture>

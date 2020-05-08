@@ -41,20 +41,33 @@ class Block extends React.Component {
             this.onDrop(e, "category")
         }}>
 
+                <div className={"head"} style={{display:"flex"}}>
+                    <input placeholder={"Category name"}></input>
 
+                </div>
+                <div className={"head"} style={{display:"flex"}}>
+                <ul style={{display:"flex",flexDirection:"column",padding:"0px",flex:"2"}}>
 
-                <ul style={{display:"flex",flexDirection:"column"}}>
-
-                    <li style={{flex:"1"}}><span style={{width:"10%",float:"left",height:"auto"}}>Pr</span><span style={{width:"10%",float:"left",height:"auto"}}>Du</span><span style={{float:"left"}}>Task</span></li>
+                    <li style={{flex:"1",display:"flex"}}><span style={{flex:"1",float:"left",height:"auto"}}>Pr</span><span style={{flex:"1",float:"left",height:"auto"}}>Du</span><span style={{float:"left",flex:"4"}}>Task</span></li>
                     {this.props.filtered[0].filter(t=>t.blockId ===this.props.id).map(task => {
 
-                        return <li style={{flex:"1"}}><input style={{width:"10%",float:"left",height:"auto"}} /><input style={{width:"10%",float:"left",height:"auto"}} /><span style={{float:"left",width:"80%",height:"auto",background:"inherit"}}><Todos style={{height:"auto",width:"auto"}} id={task.todoId} title={task.title}/></span></li>
+                        return <li style={{flex:"1",display:"flex"}}><input style={{width:"10%",float:"left",height:"30px",flex:"1"}} /><input style={{width:"10%",float:"left",height:"30px",flex:"1"}} /><span style={{float:"left",width:"60%",height:"auto",background:"inherit",flex:"4"}}><Todos style={{height:"auto",width:"120px"}} id={task.todoId} title={task.title}/></span></li>
                                     })}
 
-
-
-
                 </ul>
+                    <span style={{flex:"1"}} >Outcome<textarea/></span>
+                    <span  style={{flex:"1"}} >Purpose<textarea/></span>
+
+
+
+
+
+                </div>
+        </div>
+
+
+
+
 
 
 
@@ -89,7 +102,6 @@ class Block extends React.Component {
 
 
 
-        </div>
 
 
             }
